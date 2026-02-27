@@ -772,10 +772,11 @@ export const definitions: DefinitionWithExtend[] = [
         vendor: "IKEA",
         description: "TRADFRI control outlet",
         whiteLabel: [
-            {model: "E1603", vendor: "IKEA", description: "E1603 (Type - F)"},
-            {model: "E1702/E1703", vendor: "IKEA", description: "E1702/E1703 (Type - E)"},
-            {model: "E1704", vendor: "IKEA", description: "E1704 (Type - G)"},
-            {model: "E1705", vendor: "IKEA", description: "E1705 (Type - L)"},
+            {model: "E1603", vendor: "IKEA", description: "TRADFRI control outlet (Type - F)"},
+            {model: "E1702", vendor: "IKEA", description: "TRADFRI control outlet (Type - E)"},
+            {model: "E1703", vendor: "IKEA", description: "TRADFRI control outlet (Type - E)"},
+            {model: "E1704", vendor: "IKEA", description: "TRADFRI control outlet (Type - G)"},
+            {model: "E1705", vendor: "IKEA", description: "TRADFRI control outlet (Type - L)"},
             {
                 model: "E1706/E1707/E1708/E1709/E1710",
                 vendor: "IKEA",
