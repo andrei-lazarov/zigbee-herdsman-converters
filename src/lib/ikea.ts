@@ -925,6 +925,20 @@ export function addCustomClusterManuSpecificIkeaSmartPlug(): ModernExtend {
     });
 }
 
+export function addCustomClusterManuSpecificIkeaMotionSensor(): ModernExtend {
+    return m.deviceAddCustomCluster("manuSpecificIkeaMotionSensor", {
+        name: "manuSpecificIkeaMotionSensor",
+        ID: 0xfc81,
+        manufacturerCode: Zcl.ManufacturerCode.IKEA_OF_SWEDEN,
+        attributes: {
+            darkMode: {name: "darkMode", ID: 0x0000, type: Zcl.DataType.BOOLEAN, write: true},
+        },
+
+        commands: {},
+        commandsResponse: {},
+    });
+}
+
 export interface IkeaUnknown {
     attributes: never;
     commands: never;
@@ -1146,6 +1160,24 @@ export const ikeaModernExtend = {
                 ];
             },
         ];
+
+        return result;
+    },
+
+    motionSensorDarkMode: (args?: Partial<m.BinaryArgs<"manuSpecificIkeaMotionSensor">>) => {
+        const resultName = "dark_mode";
+        const resultDescription = "Trigger bound light only in dark surroudings";
+
+        const result: ModernExtend = m.binary({
+            name: resultName,
+            cluster: "manuSpecificIkeaMotionSensor",
+            attribute: {ID: 0x0000, type: Zcl.DataType.BOOLEAN},
+            entityCategory: "config",
+            valueOff: [false, false],
+            valueOn: [true, true],
+            description: resultDescription,
+            zigbeeCommandOptions: {manufacturerCode: Zcl.ManufacturerCode.IKEA_OF_SWEDEN},
+        });
 
         return result;
     },
