@@ -764,7 +764,7 @@ export const whitelabel = (vendor: string, model: string, description: string, m
     const fingerprint = manufacturerNames.map((manufacturerName) => {
         return {manufacturerName};
     });
-    return {vendor, model, description, fingerprint};
+    return {vendor, model, ...(description ? {description} : {}), fingerprint};
 };
 
 class Base {
