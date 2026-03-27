@@ -6953,6 +6953,7 @@ export const definitions: DefinitionWithExtend[] = [
             "_TZ3000_xfxpoxe0",
             "_TZ3000_afgzktgb",
             "_TZ3000_qamj2vnn",
+            "_TZ3000_pgq7ormg",
         ]),
         model: "TS0001_switch_module",
         vendor: "Tuya",
@@ -6964,6 +6965,7 @@ export const definitions: DefinitionWithExtend[] = [
             tuya.whitelabel("AVATTO", "ZBTS60-01", "1 gang switch module with backlight", ["_TZ3000_xfxpoxe0"]),
             tuya.whitelabel("Moes", "ZM4LT1", "1-gang switch module", ["_TZ3000_afgzktgb"]),
             tuya.whitelabel("Nous", "B6Z", "1 gang switch", ["_TZ3000_qamj2vnn"]),
+            tuya.whitelabel("iHseno", "_TZ3000_pgq7ormg", "1 gang switch module", ["_TZ3000_pgq7ormg"]),
         ],
         extend: [
             tuya.modernExtend.tuyaBase(),
@@ -6977,17 +6979,6 @@ export const definitions: DefinitionWithExtend[] = [
                 inchingSwitch: (m) => m === "_TZ3000_afgzktgb",
             }),
         ],
-        configure: async (device, coordinatorEndpoint) => {
-            await tuya.configureMagicPacket(device, coordinatorEndpoint);
-            await reporting.bind(device.getEndpoint(1), coordinatorEndpoint, ["genOnOff"]);
-        },
-    },
-    {
-        fingerprint: tuya.fingerprint("TS0001", ["_TZ3000_pgq7ormg"]),
-        model: "_TZ3000_pgq7ormg",
-        vendor: "iHseno",
-        description: "1 gang switch module",
-        extend: [tuya.modernExtend.tuyaBase(), tuya.modernExtend.tuyaOnOff({switchType: true, onOffCountdown: true, indicatorMode: true})],
         configure: async (device, coordinatorEndpoint) => {
             await tuya.configureMagicPacket(device, coordinatorEndpoint);
             await reporting.bind(device.getEndpoint(1), coordinatorEndpoint, ["genOnOff"]);
