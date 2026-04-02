@@ -609,7 +609,7 @@ export const definitions: DefinitionWithExtend[] = [
         ],
         model: "KAJPLATS_CWS",
         vendor: "IKEA",
-        description: "KAJPLATS color/white spectrum light",
+        description: "KAJPLATS bulb, color/white spectrum",
         extend: [
             m.light({
                 colorTemp: {range: [153, 555]},
@@ -697,7 +697,7 @@ export const definitions: DefinitionWithExtend[] = [
         ],
         model: "KAJPLATS_WS",
         vendor: "IKEA",
-        description: "KAJPLATS white spectrum light",
+        description: "KAJPLATS bulb, white spectrum",
         extend: [
             m.light({
                 colorTemp: {range: [153, 454]},
@@ -740,7 +740,7 @@ export const definitions: DefinitionWithExtend[] = [
         ],
         model: "KAJPLATS_WS_clear",
         vendor: "IKEA",
-        description: "KAJPLATS light, white spectrum, clear",
+        description: "KAJPLATS bulb, white spectrum, clear",
         extend: [
             m.light({
                 colorTemp: {range: [153, 454]},
