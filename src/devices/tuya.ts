@@ -3553,7 +3553,7 @@ export const definitions: DefinitionWithExtend[] = [
             tuya.modernExtend.tuyaBase(),
             tuya.modernExtend.tuyaLight({
                 colorTemp: {range: [153, 500]},
-                color: true,
+                color: {modes: ["xy", "hs"]},
             }),
         ],
         // https://github.com/Koenkk/zigbee2mqtt/issues/30584
