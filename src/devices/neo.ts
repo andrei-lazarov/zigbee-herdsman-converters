@@ -342,14 +342,17 @@ export const definitions: DefinitionWithExtend[] = [
             e.numeric("max_humidity_alarm", ea.STATE_SET).withUnit("%").withValueMin(0).withValueMax(100).withDescription("Upper humidity limit"),
             e.numeric("min_humidity_alarm", ea.STATE_SET).withUnit("%").withValueMin(0).withValueMax(100).withDescription("Lower humidity limit"),
             e.numeric("schedule_periodic", ea.STATE_SET).withUnit("min").withValueMin(5).withValueMax(60).withDescription("Report sensitivity"),
+            te.batteryState(),
             e.battery(),
         ],
         meta: {
             tuyaDatapoints: [
-                [1, "ec", tuya.valueConverter.raw],
-                [3, "humidity", tuya.valueConverter.raw],
+                [1, "ec", tuya.valueConverter.raw], // unit and scale need verification
+                [3, "humidity", tuya.valueConverter.raw], // moisture
                 [4, "fertility", tuya.valueConverter.fertility],
                 [5, "temperature", tuya.valueConverter.divideBy10],
+                // [9, "temp_unit_convert", tuya.valueConverter.temperatureUnitEnum],
+                [14, "battery_state", tuya.valueConverter.batteryState],
                 [15, "battery", tuya.valueConverter.raw],
                 [101, "temperature_alarm", tuya.valueConverter.temperature_humidity_alarm],
                 [102, "humidity_alarm", tuya.valueConverter.temperature_humidity_alarm],
@@ -359,8 +362,11 @@ export const definitions: DefinitionWithExtend[] = [
                 [106, "min_humidity_alarm", tuya.valueConverter.raw],
                 [107, "temperature_sensitivity", tuya.valueConverter.divideBy10],
                 [108, "humidity_sensitivity", tuya.valueConverter.raw],
-                [109, "schedule_periodic", tuya.valueConverter.raw],
+                [109, "schedule_periodic", tuya.valueConverter.raw], // detection_interval_time
                 [110, "temperature_f", tuya.valueConverter.divideBy10],
+                // [111, "temperature_sensitivity_f", tuya.valueConverter.divideBy10],
+                // [112, "max_temperature_alarm_f", tuya.valueConverter.divideBy10],
+                // [113, "min_temperature_alarm_f", tuya.valueConverter.divideBy10],
             ],
         },
     },

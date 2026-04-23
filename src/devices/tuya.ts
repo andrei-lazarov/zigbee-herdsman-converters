@@ -4077,6 +4077,7 @@ export const definitions: DefinitionWithExtend[] = [
             tuyaDatapoints: [
                 [3, "soil_moisture", tuya.valueConverter.raw],
                 [5, "temperature", tuya.valueConverter.divideBy10],
+                // [9, "temp_unit_convert", tuya.valueConverter.temperatureUnitEnum],
                 [14, "battery_state", tuya.valueConverter.batteryState],
                 [15, "battery", tuya.valueConverter.raw],
                 [101, "temperature_alarm", tuya.valueConverter.temperature_humidity_alarm],
@@ -4087,8 +4088,11 @@ export const definitions: DefinitionWithExtend[] = [
                 [106, "min_humidity_alarm", tuya.valueConverter.raw],
                 [107, "temperature_sensitivity", tuya.valueConverter.divideBy10],
                 [108, "humidity_sensitivity", tuya.valueConverter.raw],
-                [109, "schedule_periodic", tuya.valueConverter.raw],
+                [109, "schedule_periodic", tuya.valueConverter.raw], // detection_interval_time
                 [110, "temperature_f", tuya.valueConverter.divideBy10],
+                // [111, "temperature_sensitivity_f", tuya.valueConverter.divideBy10],
+                // [112, "max_temperature_alarm_f", tuya.valueConverter.divideBy10],
+                // [113, "min_temperature_alarm_f", tuya.valueConverter.divideBy10],
             ],
         },
     },
