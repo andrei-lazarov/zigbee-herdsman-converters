@@ -4075,24 +4075,8 @@ export const definitions: DefinitionWithExtend[] = [
         ],
         meta: {
             tuyaDatapoints: [
-                [
-                    101,
-                    "temperature_alarm",
-                    tuya.valueConverterBasic.lookup({
-                        lower_alarm: tuya.enum(0),
-                        upper_alarm: tuya.enum(1),
-                        cancel: tuya.enum(2),
-                    }),
-                ],
-                [
-                    102,
-                    "humidity_alarm",
-                    tuya.valueConverterBasic.lookup({
-                        lower_alarm: tuya.enum(0),
-                        upper_alarm: tuya.enum(1),
-                        cancel: tuya.enum(2),
-                    }),
-                ],
+                [101, "temperature_alarm", tuya.valueConverter.temperature_humidity_alarm],
+                [102, "humidity_alarm", tuya.valueConverter.temperature_humidity_alarm],
                 [3, "soil_moisture", tuya.valueConverter.raw],
                 [5, "temperature", tuya.valueConverter.divideBy10],
                 [110, "temperature_f", tuya.valueConverter.divideBy10],
