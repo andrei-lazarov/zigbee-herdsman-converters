@@ -1430,7 +1430,7 @@ export const command_move_to_level: Fz.Converter<"genLevelCtrl", undefined, ["co
         if (hasAlreadyProcessedMessage(msg, model)) return;
         const payload: KeyValueAny = {
             action: postfixWithEndpointName("brightness_move_to_level", msg, model, meta),
-            action_level: msg.data.level,
+            action_level: msg.data.level || 254,
             action_transition_time: msg.data.transtime / 100,
         };
         addActionGroup(payload, msg, model);
