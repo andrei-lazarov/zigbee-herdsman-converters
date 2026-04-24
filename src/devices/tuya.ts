@@ -23295,6 +23295,8 @@ export const definitions: DefinitionWithExtend[] = [
         },
     },
     {
+        // Incomplete. See _TZE200_mlglxwp3 datapoints here:
+        // https://github.com/Koenkk/zigbee-herdsman-converters/pull/12014
         fingerprint: tuya.fingerprint("TS0601", ["_TZE200_mlglxwp3"]),
         model: "TS0601_cover_12",
         vendor: "Tuya",
