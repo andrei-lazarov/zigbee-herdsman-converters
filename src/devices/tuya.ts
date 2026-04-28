@@ -5918,10 +5918,9 @@ export const definitions: DefinitionWithExtend[] = [
             tuya.whitelabel("Zemismart", "ZMR4_1", "4 button portable remote control (without dimmer)", ["_TZ3000_xwuveizv"]),
             tuya.whitelabel("Tuya", "TS0044_2", "Wireless switch with 4 buttons", ["_TZ3000_zgyzgdua"]),
         ],
-        extend: [tuyaBase()],
+        extend: [tuyaBase(), m.battery({voltage: true, percentageReporting: false})],
         fromZigbee: [tuya.fz.on_off_action, fz.battery],
         exposes: [
-            e.battery(),
             e.action([
                 "1_single",
                 "1_double",
@@ -5937,8 +5936,6 @@ export const definitions: DefinitionWithExtend[] = [
                 "4_hold",
             ]),
         ],
-        toZigbee: [],
-        configure: tuya.configureMagicPacket,
         /*
          * reporting.batteryPercentageRemaining removed as it was causing devices to fall of the network
          * every 1 hour, with light flashing when it happened, extremely short battery life, 2 presses for
