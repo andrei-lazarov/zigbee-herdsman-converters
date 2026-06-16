@@ -5352,7 +5352,23 @@ const tuyaClusters = {
         modernExtend.deviceAddCustomCluster("genLevelCtrl", {
             name: "genLevelCtrl",
             ID: Zcl.Clusters.genLevelCtrl.ID,
-            attributes: {},
+            attributes: {
+                currentLevel: {
+                    name: "currentLevel",
+                    ID: 0x0000,
+                    type: Zcl.DataType.UINT8,
+                    report: true,
+                    scene: true,
+                    required: true,
+                    default: 0xff,
+                    // for genLevelCtrlForLighting:
+                    // min: 1,
+                    // max: 0xfe,
+
+                    write: true,
+                    // its writable - allows changing level while off
+                },
+            },
             commands: {
                 moveToLevelTuya: {
                     name: "moveToLevelTuya",
